@@ -1,0 +1,1 @@
+Images of Mahjong tiles are taken from http://majandofu.com/mahjong-images
