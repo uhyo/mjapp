@@ -1,5 +1,5 @@
 import React from 'react';
-import {WING_NAMES} from '../../lib/wing';
+import {WIND_NAMES} from '../../lib/wind';
 
 export default class PointBoard extends React.Component {
     render(){
@@ -7,7 +7,7 @@ export default class PointBoard extends React.Component {
         //TODO
         return <div className="mahjong-point-board">{
             point.map((point, i)=>{
-                return <div key={i}>{WING_NAMES[i]} {point}</div>;
+                return <div key={i}>{WIND_NAMES[i]} {point}</div>;
             }).toArray()
         }</div>;
     }
