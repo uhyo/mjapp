@@ -75,3 +75,29 @@
     }
   }
 }
+
+.mahjong-tiles {
+  width: 460px;
+  position: absolute;
+  transform-origin: 0 0;
+
+  &.mahjong-tiles-0 {
+    left: 70px;
+    bottom: 20px;
+  }
+  &.mahjong-tiles-1 {
+    transform: rotate(-90deg);
+    left: 535px;
+    bottom: 55px;
+  }
+  &.mahjong-tiles-2 {
+    transform: rotate(180deg);
+    left: 510px;
+    top: 70px;
+  }
+  &.mahjong-tiles-3 {
+    transform: rotate(90deg);
+    left: 65px;
+    top: 80px;
+  }
+}

@@ -6,5 +6,5 @@ import tileReducer from './tile';
 export default combineReducers({
     state: stateReducer,
     point: pointReducer,
-    tile: tileReducer
+    tile: tileReducer,
 });

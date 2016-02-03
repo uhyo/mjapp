@@ -6,13 +6,13 @@ import TilesComponent from '../components/tiles.jsx';
 
 class Tiles extends React.Component{
     render(){
-        const {tile} = this.props;
+        const {hand} = this.props;
         return <div>{
-            tile.map((tiles,i) => <TilesComponent tiles={tiles} key={`tile-player-${i}`}/>).toArray()
+            hand.map((tiles,i) => <TilesComponent tiles={tiles} player={i} key={`tile-player-${i}`}/>).toArray()
         }</div>;
     }
 }
 
-const select = state => state;
+const select = state => state.tile;
 
 export default connect(select)(Tiles);
