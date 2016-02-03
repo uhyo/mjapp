@@ -1,3 +1,77 @@
+@mixin mincho-font {
+  font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "TakaoPMincho", "IPAPMincho", serif;
+}
+@mixin gothic-font {
+  font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
 .mahjong-board-frame {
-    background-color: #0d5d19;
+  width: 600px;
+  height: 600px;
+  background-color: #0d5d19;
+  
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.mahjong-point-board {
+  background-color: #445544;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+
+  color: #cccccc;
+
+  .mahjong-point-board-wind {
+    position: absolute;
+    @include mincho-font;
+    font-size: 36px;
+    font-weight: bold;
+
+    &.mahjong-point-board-wind-0 {
+      left: 80px;
+      bottom: 20px;
+    }
+    &.mahjong-point-board-wind-1 {
+      top: 70px;
+      right: 20px;
+    }
+    &.mahjong-point-board-wind-2 {
+      left: 80px;
+      top: 10px;
+    }
+    &.mahjong-point-board-wind-3 {
+      left: 20px;
+      top: 70px;
+    }
+  }
+  .mahjong-point-board-score {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 1rem;
+    text-align: center;
+    @include mincho-font;
+
+
+    &.mahjong-point-board-score-0 {
+      left: 75px;
+      bottom: 6px;
+    }
+    &.mahjong-point-board-score-1 {
+      right: 12px;
+      top: 110px;
+    }
+    &.mahjong-point-board-score-2 {
+      left: 75px;
+      top: 49px;
+    }
+    &.mahjong-point-board-score-3 {
+      left: 14px;
+      top: 110px;
+    }
+  }
 }

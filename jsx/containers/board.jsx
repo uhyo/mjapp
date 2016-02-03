@@ -3,20 +3,20 @@ import { connect } from 'react-redux';
 
 import BoardFrame from '../components/board-frame.jsx';
 import PointBoard from '../components/point-board.jsx';
+import Tiles from './tiles.jsx';
 
 class Board extends React.Component{
     render(){
-        console.log(this.props);
         const {point}=this.props;
         return <BoardFrame>
             <p>{this.props.state}</p>
             <PointBoard point={point}/>
+            <Tiles/>
         </BoardFrame>;
     }
 }
 
-function select(store){
-    return store;
-}
+const select = store => store;
 
 export default connect(select)(Board);
+
