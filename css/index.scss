@@ -17,35 +17,35 @@
 
 .mahjong-point-board {
   background-color: #445544;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   position: absolute;
-  left: 200px;
-  top: 200px;
+  left: 220px;
+  top: 220px;
 
   color: #cccccc;
 
   .mahjong-point-board-wind {
     position: absolute;
     @include mincho-font;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: bold;
 
     &.mahjong-point-board-wind-0 {
-      left: 80px;
+      left: 65px;
       bottom: 20px;
     }
     &.mahjong-point-board-wind-1 {
-      top: 70px;
+      top: 60px;
       right: 20px;
     }
     &.mahjong-point-board-wind-2 {
-      left: 80px;
+      left: 65px;
       top: 10px;
     }
     &.mahjong-point-board-wind-3 {
       left: 20px;
-      top: 70px;
+      top: 60px;
     }
   }
   .mahjong-point-board-score {
@@ -54,24 +54,25 @@
     width: 50px;
     height: 1rem;
     text-align: center;
+    font-size: 14px;
     @include mincho-font;
 
 
     &.mahjong-point-board-score-0 {
-      left: 75px;
+      left: 55px;
       bottom: 6px;
     }
     &.mahjong-point-board-score-1 {
-      right: 12px;
-      top: 110px;
+      right: 8px;
+      top: 92px;
     }
     &.mahjong-point-board-score-2 {
-      left: 75px;
-      top: 49px;
+      left: 55px;
+      top: 40px;
     }
     &.mahjong-point-board-score-3 {
-      left: 14px;
-      top: 110px;
+      left: 10px;
+      top: 92px;
     }
   }
 }
@@ -85,6 +86,15 @@
   &.mahjong-tiles-0 {
     left: 70px;
     bottom: 20px;
+
+    img.mahjong-tile-image {
+      cursor: pointer;
+      &:hover{
+        //指すと浮く
+        display: inline-block;
+        padding-bottom: 12px;
+      }
+    }
   }
   &.mahjong-tiles-1 {
     transform: rotate(-90deg);
