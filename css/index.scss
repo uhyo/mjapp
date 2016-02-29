@@ -76,6 +76,7 @@
   }
 }
 
+// 手牌
 .mahjong-tiles {
   width: 460px;
   position: absolute;
@@ -100,4 +101,55 @@
     left: 65px;
     top: 80px;
   }
+}
+
+//山
+.mahjong-deck-wanpai {
+  width: 134.4px;
+  height: 27px;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(180deg);
+  left: 206px;
+  top: 120px;
+}
+.mahjong-deck-top {
+  width: 192px;
+  height: 27px;
+
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(180deg);
+  left: 360px;
+  top: 120px;
+}
+.mahjong-deck-right, .mahjong-deck-bottom, .mahjong-deck-left {
+  width: 326.4px;
+  height: 27px;
+}
+.mahjong-deck-right {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  left: 480px;
+  top: 300px;
+}
+.mahjong-deck-bottom {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 300px;
+  top: 480px;
+}
+.mahjong-deck-left {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(90deg);
+  left: 120px;
+  top: 300px;
+}
+
+//牌の画像
+img.mahjong-tile-image {
+  width: 32px;
+  height: 45px;
+}
+img.mahjong-tile-image-small {
+  width: 19.2px;
+  height: 27px;
 }

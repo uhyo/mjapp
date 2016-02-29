@@ -1,4 +1,6 @@
-import {random, dummy} from './draw';
+import {random, dummy, dora} from './draw';
+import {sort} from './sort';
+import {SORT_MPSJ} from '../lib/sort';
 
 const DRAW_SPEED = 135;
 
@@ -23,7 +25,14 @@ export default function init(){
             }
             if(turn<4){
                 setTimeout(step, DRAW_SPEED);
+            }else{
+                setTimeout(step2, DRAW_SPEED);
             }
+        }
+
+        function step2(){
+            dispatch(dora());
+            dispatch(sort(SORT_MPSJ));
         }
     };
 }
