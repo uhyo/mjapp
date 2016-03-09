@@ -128,7 +128,8 @@ function release(state, player, index){
 //役を作る
 function handOpen(state, player){
     const {hand, deck, discard} = state;
-    while(true){
+    let cnt = 0;
+    while(cnt++ < 100){
         const yakuMaker = randomYakuMaker();
         const obj  = yakuMaker(discard, hand.get(player), deck);
         if(obj!=null){
@@ -148,6 +149,7 @@ function handOpen(state, player){
             });
         }
     }
+    throw new Error("役が決まりませんでした");
 }
 
 function makeInitialDeck(){
