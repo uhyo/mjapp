@@ -3,7 +3,7 @@ import {Seq,Range,Set, OrderedSet} from 'immutable';
 import objectAssign from 'object-assign';
 import {WIND_NUMBER} from '../lib/wind';
 import {uraTile, makeDeck} from '../lib/tile';
-import {randomYakuMaker} from '../lib/yaku';
+import {randomYakuMaker, checkYakuman} from '../lib/yaku';
 
 import {ACTION_DRAW_RANDOM, ACTION_DRAW_DUMMY, ACTION_DRAW_DORA} from '../actions/draw';
 import {ACTION_RELEASE, ACTION_HAND_OPEN} from '../actions/play';
@@ -132,7 +132,8 @@ function handOpen(state, player){
         const yakuMaker = randomYakuMaker();
         const obj  = yakuMaker(discard, hand.get(player), deck);
         if(obj!=null){
-            const {tiles:newTiles, deck, yakuman} = obj;
+            const {tiles:newTiles, deck} = obj;
+            const yakuman = checkYakuman(newTiles, discard);
             const sorted = sortTile(Seq(newTiles));
             return objectAssign({}, state, {
                 hand: hand.map((tiles, i)=>
