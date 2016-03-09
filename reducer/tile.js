@@ -133,13 +133,14 @@ function handOpen(state, player){
         const obj  = yakuMaker(discard, hand.get(player), deck);
         if(obj!=null){
             const {tiles:newTiles, deck, yakuman} = obj;
+            const sorted = sortTile(Seq(newTiles));
             return objectAssign({}, state, {
                 hand: hand.map((tiles, i)=>
-                                i===player ? newTiles : tiles),
+                                i===player ? sorted : tiles),
                 deck,
                 agari: {
                     player,
-                    tiles:newTiles,
+                    tiles:sorted,
                     agarihai: discard,
                     yakuman
                 }
