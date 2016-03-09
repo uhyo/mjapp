@@ -25,6 +25,10 @@ module.exports={
                 }
             },
             {
+                test: /\.jsx?$/,
+                loader: "transform/cacheable?envify"
+            },
+            {
                 test: /\.html$/,
                 loader: "file?name=[name].[ext]"
             },

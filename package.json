@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "css-loader": "^0.23.1",
+    "envify": "^3.4.0",
     "file-loader": "^0.8.5",
     "img-loader": "^1.2.2",
     "immutable": "^3.7.6",
@@ -32,6 +33,7 @@
     "reselect": "^2.0.3",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "transform-loader": "^0.2.3",
     "uglify-js": "^2.6.2",
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^1.14.1"
