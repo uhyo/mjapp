@@ -1,4 +1,5 @@
 import {random, dummy, dora} from './draw';
+import {playing} from './state';
 import {sort} from './sort';
 import {SORT_MPSJ} from '../lib/sort';
 
@@ -33,6 +34,7 @@ export default function init(){
         function step2(){
             dispatch(dora());
             dispatch(sort(SORT_MPSJ));
+            dispatch(playing());
         }
     };
 }

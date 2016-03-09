@@ -80,10 +80,15 @@
 // 手牌
 .mahjong-tiles {
   width: 460px;
-  position: absolute;
   transform-origin: 0 0;
 
+  span.mahjong-tiles-addition {
+    display: inline-block;
+    margin: 0 0 0 12px;
+  }
+
   &.mahjong-tiles-0 {
+    position: absolute;
     left: 70px;
     bottom: 20px;
 
@@ -98,16 +103,19 @@
   }
   &.mahjong-tiles-1 {
     transform: rotate(-90deg);
+    position: absolute;
     left: 535px;
     bottom: 55px;
   }
   &.mahjong-tiles-2 {
     transform: rotate(180deg);
+    position: absolute;
     left: 510px;
     top: 70px;
   }
   &.mahjong-tiles-3 {
     transform: rotate(90deg);
+    position: absolute;
     left: 65px;
     top: 80px;
   }
@@ -152,6 +160,101 @@
   transform: translate(-50%, -50%) rotate(90deg);
   left: 120px;
   top: 300px;
+}
+
+.mahjong-discard-0 {
+  position: absolute;
+  left: 220px;
+  top: 395px;
+}
+
+img.mahjong-effect-ron {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 600px;
+  height: 600px;
+
+}
+.mahjong-effect-agari {
+  @include mincho-font;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(#000000, .65);
+  color: white;
+}
+.mahjong-agari-show {
+  width: 460px;
+  margin: 80px auto 20px;
+}
+
+.mahjong-agari-yaku {
+  width:300px;
+  margin: 20px auto 20px;
+
+  .mahjong-yaku-name {
+    display: inline-block;
+    width: 240px;
+    font-size: 46px;
+    text-align: left;
+    font-weight: bold;
+  }
+  .mahjong-yaku-score {
+    display: inline-block;
+    width:60px;
+    font-size: 22px;
+    text-align: right;
+  }
+}
+
+.mahjong-effect-result {
+  @include mincho-font;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(#000000, .65);
+  color: white;
+
+  .mahjong-result {
+    width: 350px;
+    margin: 120px auto 20px;
+
+    .mahjong-result-row {
+      margin: 20px 0 0 0;
+    }
+
+    .mahjong-result-number {
+      display: inline-block;
+      font-size: 22px;
+      width: 50px;
+    }
+    .mahjong-result-name {
+      display: inline-block;
+      font-size: 32px;
+      width: 240px;
+    }
+    .mahjong-result-point {
+      display: inline-block;
+      font-size: 20px;
+      width: 60px;
+    }
+  }
+
+  .mahjong-end {
+    position: absolute;
+    font-size: 66px;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 //牌の画像

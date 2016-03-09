@@ -4,10 +4,19 @@ import {uraTile, tileImage, tileName} from '../../lib/tile';
 
 export class HandTilesComponent extends React.Component {
     render(){
-        const {tiles, player} = this.props;
-        return <div className={`mahjong-tiles mahjong-tiles-${player}`}>{
-            tiles.map((tile, i)=> <img key={`${player}-${i}`} className="mahjong-tile-image" src={tileImage(tile)}/>).toArray()
-        }</div>;
+        const {tiles, player, onSelect, addition} = this.props;
+        const c = "mahjong-tiles" + (player!=null ? ` mahjong-tiles-${player}` : "");
+        return <div className={c}>
+            <span>{
+                tiles.map((tile, i)=> <img key={`tile-${i}`} className="mahjong-tile-image" src={tileImage(tile)} onClick={onSelect ? onSelect(i) : null}/>).toArray()
+            }</span>
+            {addition!=null ?
+                <span className="mahjong-tiles-addition">
+                    <img className="mahjong-tile-image" src={tileImage(addition)}/>
+                </span>
+                : null
+            }
+        </div>;
     }
 }
 
@@ -29,6 +38,19 @@ export class DeckComponent extends React.Component {
             }</div>
             <div className="mahjong-deck-left">{
                 Range(0, Math.max(0, Math.min(17, Math.ceil(deckNumber/2)))).map(i => <img key={`wanpai-${i}`} className="mahjong-tile-image-small" src={tileImage(uraTile)}/>)
+            }</div>
+        </div>;
+    }
+}
+
+export class DiscardComponent extends React.Component {
+    render(){
+        const {discard} = this.props;
+        return <div>
+            <div className="mahjong-discard-0">{
+                discard!=null ? 
+                    (<img className="mahjong-tile-image-small" src={tileImage(discard)}/>)
+                : null
             }</div>
         </div>;
     }

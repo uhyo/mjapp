@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import BoardFrame from '../components/board-frame.jsx';
 import PointBoard from '../components/point-board.jsx';
 import Tiles from './tiles.jsx';
+import Effect from './effect.jsx';
 
 class Board extends React.Component{
     render(){
@@ -12,6 +13,7 @@ class Board extends React.Component{
             <p>{this.props.state}</p>
             <PointBoard point={point}/>
             <Tiles/>
+            <Effect/>
         </BoardFrame>;
     }
 }
