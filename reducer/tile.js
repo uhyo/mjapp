@@ -131,22 +131,26 @@ function handOpen(state, player){
     let cnt = 0;
     while(cnt++ < 100){
         const yakuMaker = randomYakuMaker();
-        const obj  = yakuMaker(discard, hand.get(player), deck);
-        if(obj!=null){
-            const {tiles:newTiles, deck} = obj;
-            const yakuman = checkYakuman(newTiles, discard);
-            const sorted = sortTile(Seq(newTiles));
-            return objectAssign({}, state, {
-                hand: hand.map((tiles, i)=>
-                                i===player ? sorted : tiles),
-                deck,
-                agari: {
-                    player,
-                    tiles:sorted,
-                    agarihai: discard,
-                    yakuman
-                }
-            });
+        try{
+            const obj  = yakuMaker(discard, hand.get(player), deck);
+            if(obj!=null){
+                const {tiles:newTiles, deck} = obj;
+                const yakuman = checkYakuman(newTiles, discard);
+                const sorted = sortTile(Seq(newTiles));
+                return objectAssign({}, state, {
+                    hand: hand.map((tiles, i)=>
+                                   i===player ? sorted : tiles),
+                                   deck,
+                                   agari: {
+                                       player,
+                                       tiles:sorted,
+                                       agarihai: discard,
+                                       yakuman
+                                   }
+                });
+            }
+        }catch(e){
+            console.error(e);
         }
     }
     throw new Error("役が決まりませんでした");
