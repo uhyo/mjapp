@@ -1,0 +1,7 @@
+これの動かし方
+
+1. node.jsをインストールする（インストールしてなければ）
+2. ここでnpm installを実行（関連モジュールをダウンロードする）
+3. npm run serverを実行（もしくはwebpackをグローバルインストールしてwebpack-dev-serverを実行）
+4. http://localhost:8080/webpack-dev-server/ にアクセスすれば動作する
+5. その状態で各ファイルをいじれば自動的に反映される
