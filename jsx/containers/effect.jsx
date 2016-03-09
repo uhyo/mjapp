@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import store from '../../store';
+
+import init from '../../actions/init';
 
 import {STATE_RON, STATE_SHOW_YAKU, STATE_SHOW_POINT} from '../../reducer/state';
 
@@ -18,10 +21,13 @@ class Effect extends React.Component{
             const {agari} = tile;
             return <AgariComponent agari={agari}/>
         }else if(state===STATE_SHOW_POINT){
-            return <ResultComponent point={point}/>;
+            return <ResultComponent point={point} onRetry={this.onRetry}/>;
         }else{
             return <div/>;
         }
+    }
+    onRetry(e){
+        store.dispatch(init());
     }
 }
 

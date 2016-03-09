@@ -3,10 +3,15 @@ import {playing} from './state';
 import {sort} from './sort';
 import {SORT_MPSJ} from '../lib/sort';
 
+export const ACTION_INIT = 'ACTION_INIT';
+
 const DRAW_SPEED = 135;
 
 export default function init(){
     return (dispatch)=>{
+        dispatch({
+            type: ACTION_INIT
+        });
         // 開始：4人順番にドローする
         let player=0, turn=0;
 

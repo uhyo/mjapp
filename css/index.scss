@@ -243,7 +243,17 @@ img.mahjong-effect-ron {
       display: inline-block;
       font-size: 20px;
       width: 60px;
+      text-align: right;
     }
+  }
+  .mahjong-retry-button {
+    font-size: 26px;
+    background-color: rgba(#ffffff, .14);
+    text-align: center;
+    cursor: pointer;
+    width: 170px;
+    padding: 5px;
+    margin: 110px auto 0;
   }
 
   .mahjong-end {

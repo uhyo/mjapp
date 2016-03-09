@@ -1,4 +1,5 @@
 //application state
+import {ACTION_INIT} from '../actions/init';
 import {ACTION_STATE_PLAYING, ACTION_STATE_RON} from '../actions/state';
 import {ACTION_RELEASE, ACTION_HAND_OPEN, ACTION_SHOW_YAKU, ACTION_SHOW_POINT} from '../actions/play';
 
@@ -12,6 +13,8 @@ export const STATE_SHOW_POINT = 'STATE_SHOW_POINT';
 
 export default function reducer(state = STATE_INIT, action){
     switch(action.type){
+        case ACTION_INIT:
+            return STATE_INIT;
         case ACTION_STATE_PLAYING:
             return STATE_PLAYING;
         case ACTION_RELEASE:

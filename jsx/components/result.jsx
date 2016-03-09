@@ -2,10 +2,9 @@ import React from 'react';
 
 export class ResultComponent extends React.Component{
     render(){
-        const {point} = this.props;
+        const {point, onRetry} = this.props;
         const playerNames = ["あなた","めいちゃん","めいちゃん","めいちゃん"];
         const ps = point.toKeyedSeq().sort((a,b)=> b-a).entrySeq();
-        console.log(ps);
         return <div className="mahjong-effect-result">
             <div className="mahjong-result">{
             ps.map(([player, point], i)=>
@@ -15,8 +14,8 @@ export class ResultComponent extends React.Component{
                        <div className="mahjong-result-point">{point}</div>
                    </div>)
             }</div>
-            <div className="mahjong-end">
-                完
+            <div className="mahjong-retry-button" onClick={onRetry}>
+                リトライ
             </div>
         </div>;
     }

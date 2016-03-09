@@ -5,6 +5,7 @@ import {WIND_NUMBER} from '../lib/wind';
 import {uraTile, makeDeck} from '../lib/tile';
 import {randomYakuMaker, checkYakuman} from '../lib/yaku';
 
+import {ACTION_INIT} from '../actions/init';
 import {ACTION_DRAW_RANDOM, ACTION_DRAW_DUMMY, ACTION_DRAW_DORA} from '../actions/draw';
 import {ACTION_RELEASE, ACTION_HAND_OPEN} from '../actions/play';
 
@@ -27,6 +28,8 @@ const initialState = {
 
 export default function reducer(state = initialState, action){
     switch(action.type){
+        case ACTION_INIT:
+            return initialState;
         case ACTION_DRAW_RANDOM:
             //誰かがランダムにドローする
             return take(state, action.player, action.num);
